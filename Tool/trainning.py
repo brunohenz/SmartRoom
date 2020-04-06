@@ -22,12 +22,12 @@ ids, faces = getImagemComID()
 print("Treinando...")
 
 eigenface.train(faces, ids)
-eigenface.save('classificateEigen.yml')
+eigenface.save('files/classificateEigen.yml')
 
 # fisherface.train(faces, ids)
-# fisherface.save('classificateFisher.yml')
+# fisherface.save('files/classificateFisher.yml')
 
 # lbph.train(faces, ids)
-# lbph.save('classificateLBPH.yml')
+# lbph.save('files/classificateLBPH.yml')
 
 print("Treinamento Realizado!")

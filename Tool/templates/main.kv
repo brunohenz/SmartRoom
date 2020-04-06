@@ -1,0 +1,32 @@
+#:kivy 1.0
+
+BoxLayout:
+    orientation:'vertical'
+    Label:
+        id:lblTitle
+        text:'Welcome to Smart Room'
+        font_size:40
+    Button:
+        text: 'Capture Face'
+        on_release:app.getIdUser()
+    Button:
+        text: 'Recognize Face'
+
+
+<IdentifierPopup>:
+    title: 'Enter costumer CPF here'
+    size_hint: .5, .5
+    auto_dismiss: False
+    GridLayout:
+        cols: 1
+        TextInput:
+            id:txtId
+            size_hint: .9, .9            
+            valign: 'middle'            
+            text_size: self.width, None
+        Button:
+            text: 'Confirm'
+            on_release: app.setIdUser(txtId.text, root)
+        Button:
+            text: 'Close'
+            on_release: root.dismiss()

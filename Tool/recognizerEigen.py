@@ -1,4 +1,5 @@
 import cv2
+from services import Services
 
 detectorFace = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 reconhecedor = cv2.face.createEigenFaceRecognizer()
@@ -22,6 +23,7 @@ while(True):
 
     cv2.imshow("Face", imagem)
     if cv2.waitKey(1) == ord('q'):
+        sendUserIdentify(id)        
         break
         #services.Services.sendUserIdentify(id)
 
