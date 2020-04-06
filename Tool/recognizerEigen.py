@@ -23,6 +23,7 @@ while(True):
     cv2.imshow("Face", imagem)
     if cv2.waitKey(1) == ord('q'):
         break
+        #services.Services.sendUserIdentify(id)
 
 camera.release()
 cv2.destroyAllWindows()

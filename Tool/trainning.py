@@ -24,10 +24,10 @@ print("Treinando...")
 eigenface.train(faces, ids)
 eigenface.save('classificateEigen.yml')
 
-fisherface.train(faces, ids)
-fisherface.save('classificateFisher.yml')
+# fisherface.train(faces, ids)
+# fisherface.save('classificateFisher.yml')
 
-lbph.train(faces, ids)
-lbph.save('classificateLBPH.yml')
+# lbph.train(faces, ids)
+# lbph.save('classificateLBPH.yml')
 
 print("Treinamento Realizado!")
