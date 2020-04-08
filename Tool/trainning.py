@@ -2,12 +2,10 @@ import cv2
 import os
 import numpy as np
 
-eigenface = cv2.face.createEigenFaceRecognizer()
-fisherface = cv2.face.createFisherFaceRecognizer()
 lbph = cv2.face.createLBPHFaceRecognizer()
 
 def getImagemComID():
-    caminhos = [os.path.join('fotos', f) for f in os.listdir('fotos')]    
+    caminhos = [os.path.join('pics', f) for f in os.listdir('pics')]    
     faces = []
     ids = []
     for caminhoImage in caminhos:
@@ -21,13 +19,6 @@ ids, faces = getImagemComID()
 
 print("Treinando...")
 
-eigenface.train(faces, ids)
-eigenface.save('files/classificateEigen.yml')
-
-# fisherface.train(faces, ids)
-# fisherface.save('files/classificateFisher.yml')
-
-# lbph.train(faces, ids)
-# lbph.save('files/classificateLBPH.yml')
-
+lbph.train(faces, ids)
+lbph.save('files/classificate.yml')
 print("Treinamento Realizado!")

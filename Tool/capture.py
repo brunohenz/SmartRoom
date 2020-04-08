@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-class Capture:
+class CaptureFace:
     def startCapture(self, id):
         classificador = cv2.CascadeClassifier("files/haarcascade_frontalface_default.xml")
         classificadorOlho = cv2.CascadeClassifier("files/haarcascade_eye.xml")
@@ -9,7 +9,6 @@ class Capture:
         camera = cv2.VideoCapture(0)
         amostra = 1
         numeroAmostras = 25
-        # id = input('Digite seu identificador: ')
         largura, altura = 220, 220
         print("Capturando as faces...")
 
@@ -31,9 +30,13 @@ class Capture:
                     if cv2.waitKey(1) & 0xFF == ord('q'):
                         if np.average(imagemCinza) >= 110:
                             imagemFace = cv2.resize(imagemCinza[y:y + a, x:x + l], (largura, altura))
-                            cv2.imwrite("fotos/pessoa." + str(id) + "." + str(amostra) + ".jpg", imagemFace)
+                            cv2.imwrite("pics/pessoa." + str(id) + "." + str(amostra) + ".jpg", imagemFace)
                             print("[foto " + str(amostra) + " capturada com sucesso]")
                             amostra += 1
+
+                    if cv2.waitKey(1) & 0xFF == ord('x'):
+                        camera.release()
+                        cv2.destroyAllWindows()
 
             cv2.imshow("Face", imagem)
             cv2.waitKey(1)
