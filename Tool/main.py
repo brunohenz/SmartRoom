@@ -16,9 +16,6 @@ class IdentifierPopup(Popup):
 class MainScreen(Screen):
     pass
 
-class ConfirmCustomerScreen(Screen):
-    pass
-
 presentation = Builder.load_file("templates/main.kv")
 
 class MainApp(App):

@@ -32,21 +32,3 @@ BoxLayout:
             text: 'Close'
             on_release: root.dismiss()
 
-
-<ConfirmPopup>:
-    title: 'This is customer is you?'
-    size_hint: .5, .5
-    auto_dismiss: False
-    GridLayout:
-        cols: 1
-        TextInput:
-            id:txtId
-            size_hint: .9, .9            
-            valign: 'middle'            
-            text_size: self.width, None
-        Button:
-            text: 'Yes, its me...'
-            on_release: app.setIdUser(txtId.text, root)
-        Button:
-            text: 'No, its a error...'
-            on_release: root.dismiss()

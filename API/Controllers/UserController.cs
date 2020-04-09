@@ -11,7 +11,7 @@ namespace API.Controllers
     {        
         [HttpGet("{cpf}")]
         public User Get(string CPF)
-        {
+        {            
             return new User { IdUser = 1, Nome = "Bruno Henrique Salomão", CPF = "33197124898"};
         }
     }

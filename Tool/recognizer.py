@@ -1,5 +1,7 @@
 import cv2
 from services import *
+from kivy.app import App
+from confirmCustomer import *
 
 class RecognizerFace:
     def startRecognizer(self):
@@ -33,5 +35,7 @@ class RecognizerFace:
         camera.release()
         cv2.destroyAllWindows()
 
-    def confirmCustomer(self, customer):
-        print(customer)
+    def confirmCustomer(self, customer):        
+        confirm = ConfirmPopup(customer)
+        confirm.open()
+

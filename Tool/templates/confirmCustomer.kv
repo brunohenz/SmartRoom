@@ -1,0 +1,13 @@
+#:kivy 1.0
+
+<ConfirmPopup>:	
+	title: "Confirm Customer ?" + root.customer
+    size_hint: .5, .5
+    auto_dismiss: False
+    GridLayout:
+        cols: 1      
+        Button:
+            text: 'Yes, I Confirm'            
+        Button:
+            text: 'No, There is an error'
+            on_release: root.error()
